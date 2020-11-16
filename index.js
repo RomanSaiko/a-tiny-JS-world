@@ -60,11 +60,13 @@ const catWoman = {
 
 const inhabitants = [dog, cat, man, woman, catWoman]
 
-console.log(inhabitants);
-
-for(let i = 0; i < inhabitants.length; i++) {
-    print(`${inhabitants[i].species}; ${inhabitants[i].name}; ${inhabitants[i].gender}; ${inhabitants[i].legs}; ${inhabitants[i].hands}; ${inhabitants[i].saying}; ${inhabitants[i].friends.map(item => item)}.`);
+const introduceInhabitants = ({species, name, gender, legs, hands, saying, friends}) => {
+    return `${species}; ${name}; ${gender}; ${legs}; ${hands}; ${saying}; ${friends.join(', ')}.`
 }
+
+inhabitants.forEach((item) => {
+    print(introduceInhabitants(item))
+})
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
